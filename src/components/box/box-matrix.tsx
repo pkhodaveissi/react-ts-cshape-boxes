@@ -6,17 +6,20 @@ const BoxMatrix = () => {
     <BoxContainer>
       <ActiveStateManager items={boxArr}>
         {({ activeArray, items, setActive }) => {
-          console.log(activeArray);
-          return items.map((item, idx) => {
-            return (
-              <Box
-                key={idx}
-                active={activeArray.indexOf(idx) > -1}
-                disabled={!item}
-                clickHandler={() => setActive(idx)}
-              />
-            );
-          });
+          return (
+            <>
+              {items.map((item, idx) => {
+                return (
+                  <Box
+                    key={idx}
+                    active={activeArray.indexOf(idx) > -1}
+                    disabled={!item}
+                    clickHandler={() => setActive(idx)}
+                  />
+                );
+              })}
+            </>
+          );
         }}
       </ActiveStateManager>
     </BoxContainer>
