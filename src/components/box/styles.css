@@ -1,0 +1,14 @@
+.box {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+.box.active {
+  background: green;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: 45px 45px 45px;
+  gap: 10px;
+}
