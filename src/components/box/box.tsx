@@ -1,5 +1,11 @@
+import { ReactNode } from "react";
 import "./styles.css";
-const Box = ({ active, disabled, clickHandler }) => {
+type BoxProps = {
+  active: boolean;
+  disabled: boolean;
+  clickHandler: () => void;
+};
+const Box = ({ active, disabled, clickHandler }: BoxProps) => {
   return disabled ? (
     <div />
   ) : (
@@ -10,7 +16,7 @@ const Box = ({ active, disabled, clickHandler }) => {
   );
 };
 
-const BoxContainer = ({ children }) => {
+const BoxContainer = ({ children }: { children: ReactNode }) => {
   return <div className="box-container">{children}</div>;
 };
 export { Box, BoxContainer };
